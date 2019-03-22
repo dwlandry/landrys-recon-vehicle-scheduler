@@ -1,15 +1,19 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿//-----------------------------------------------------------------------
+// <copyright file="C:\Users\dlandry\source\repos\landrys-recon-vehicle-scheduler\landrys-recon-vehicle-scheduler\Properties\AssemblyInfo.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Security;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("landrys-recon-vehicle-scheduler")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Landrys Recon Vehicle Scheduler")]
+[assembly: AssemblyDescription("A simple tool to help reserve a company vehicle.  Developed by David Landry.  For any technical issues contact at him dlandry@recon-group.com.  To uninstall, go to Add/Remove programs on your machine.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ReCon Management Services")]
 [assembly: AssemblyProduct("landrys-recon-vehicle-scheduler")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

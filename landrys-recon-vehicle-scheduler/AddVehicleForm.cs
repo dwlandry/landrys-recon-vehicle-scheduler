@@ -115,6 +115,16 @@ namespace landrys_recon_vehicle_scheduler
 
         }
 
+        private void AddVehicleForm_Load(object sender, EventArgs e)
+        {
+            //AboutBox1 aboutBox = new AboutBox1();
+            //aboutBox.Show();
+        }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutBox = new AboutBox1();
+            aboutBox.ShowDialog();
+        }
     }
 }

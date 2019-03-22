@@ -33,7 +33,7 @@
     <PublishUrl>\\reconservertx\tx users\dlandry\Public\_landrys-programs\landrys-recon-vehicle-scheduler\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.3</ApplicationVersion>
+    <ApplicationVersion>1.0.0.4</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -189,6 +189,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddVehicleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddVehicleForm.resx">
       <DependentUpon>AddVehicleForm.cs</DependentUpon>
     </EmbeddedResource>
