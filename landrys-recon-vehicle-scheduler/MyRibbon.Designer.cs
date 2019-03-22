@@ -42,7 +42,6 @@ namespace landrys_recon_vehicle_scheduler
         {
             this.reConTab = this.Factory.CreateRibbonTab();
             this.groupVehicles = this.Factory.CreateRibbonGroup();
-            this.buttonUpdateVehicleResources = this.Factory.CreateRibbonButton();
             this.buttonReserveVehicle = this.Factory.CreateRibbonButton();
             this.reConTab.SuspendLayout();
             this.groupVehicles.SuspendLayout();
@@ -56,25 +55,20 @@ namespace landrys_recon_vehicle_scheduler
             // 
             // groupVehicles
             // 
-            this.groupVehicles.Items.Add(this.buttonUpdateVehicleResources);
             this.groupVehicles.Items.Add(this.buttonReserveVehicle);
             this.groupVehicles.Label = "Vehicles";
             this.groupVehicles.Name = "groupVehicles";
             // 
-            // buttonUpdateVehicleResources
-            // 
-            this.buttonUpdateVehicleResources.Label = "Update Vehicle Resources";
-            this.buttonUpdateVehicleResources.Name = "buttonUpdateVehicleResources";
-            // 
             // buttonReserveVehicle
             // 
-            this.buttonReserveVehicle.Label = "Reserve A Vehicle";
+            this.buttonReserveVehicle.Label = "Reserve a Vehicle";
             this.buttonReserveVehicle.Name = "buttonReserveVehicle";
+            this.buttonReserveVehicle.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonReserveVehicle_Click);
             // 
             // MyRibbon
             // 
             this.Name = "MyRibbon";
-            this.RibbonType = "Microsoft.Outlook.Mail.Read";
+            this.RibbonType = "Microsoft.Outlook.Explorer";
             this.Tabs.Add(this.reConTab);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.MyRibbon_Load);
             this.reConTab.ResumeLayout(false);
@@ -89,7 +83,6 @@ namespace landrys_recon_vehicle_scheduler
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab reConTab;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVehicles;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdateVehicleResources;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReserveVehicle;
     }
 

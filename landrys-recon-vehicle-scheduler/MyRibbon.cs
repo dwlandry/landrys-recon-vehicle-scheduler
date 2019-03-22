@@ -16,5 +16,11 @@ namespace landrys_recon_vehicle_scheduler
         {
 
         }
+
+        private void buttonReserveVehicle_Click(object sender, RibbonControlEventArgs e)
+        {
+            AddVehicleForm vehicleForm = new AddVehicleForm();
+            vehicleForm.Show();
+        }
     }
 }

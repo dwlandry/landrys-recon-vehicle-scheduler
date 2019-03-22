@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//-----------------------------------------------------------------------
+// <copyright file="C:\Users\dlandry\source\repos\landrys-recon-vehicle-scheduler\landrys-recon-vehicle-scheduler\ThisAddIn.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using Office = Microsoft.Office.Core;
 
 namespace landrys_recon_vehicle_scheduler
 {
@@ -20,6 +21,14 @@ namespace landrys_recon_vehicle_scheduler
             //    must run when Outlook shuts down, see https://go.microsoft.com/fwlink/?LinkId=506785
         }
 
+        // 3-21-2019 DLandry: The following override of CreateRibbonExtensibilityObject was from the following source: https://docs.microsoft.com/en-us/visualstudio/vsto/ribbon-overview?view=vs-2017
+        //protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
+        //{
+        //    //return base.CreateRibbonExtensibilityObject();
+        //    return Globals.Factory.GetRibbonFactory().CreateRibbonManager(
+        //        new Microsoft.Office.Tools.Ribbon.IRibbonExtension[] { new MyRibbon() });
+        //}
+
         #region VSTO generated code
 
         /// <summary>
@@ -31,7 +40,7 @@ namespace landrys_recon_vehicle_scheduler
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }
