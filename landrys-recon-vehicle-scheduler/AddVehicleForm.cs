@@ -13,31 +13,24 @@ namespace landrys_recon_vehicle_scheduler
 {
     public partial class AddVehicleForm : Form
     {
+        List<Vehicle> vehicles = new List<Vehicle>();
+        Microsoft.Office.Interop.Outlook.AddressLists addressLists;
+        Microsoft.Office.Interop.Outlook.AddressList globalAddressList;
+
         public AddVehicleForm()
         {
             InitializeComponent();
-            this.listBoxControlVehicles.SelectedValueChanged += schedulingDataChanged;
-            this.dateTimePickerDateOut.ValueChanged += schedulingDataChanged;
-            this.dateTimePickerDateReturned.ValueChanged += schedulingDataChanged;
-
-
-
-            dateTimePickerDateReturned.Value = dateTimePickerDateOut.Value.AddHours(1);
-
-            // initialize vehicle list
-            List<Vehicle> vehicles = new List<Vehicle>();
-
-            var addressLists = Globals.ThisAddIn.Application.Session.AddressLists;
-            var globalAddressList = addressLists["Global Address List"];
-
-            foreach (Microsoft.Office.Interop.Outlook.AddressEntry addressEntry in globalAddressList.AddressEntries)
-                if (addressEntry.Name.StartsWith("T-"))
-                    vehicles.Add(new Vehicle(addressEntry.Name));
+            listBoxControlVehicles.SelectedValueChanged += schedulingDataChanged;
+            dateTimePickerDateOut.ValueChanged += schedulingDataChanged;
+            dateTimePickerDateReturned.ValueChanged += schedulingDataChanged;
 
             bindingSource1.DataSource = vehicles;
             listBoxControlVehicles.DataSource = bindingSource1.DataSource;
             listBoxControlVehicles.DisplayMember = "Name";
             listBoxControlVehicles.ValueMember = "Name";
+
+            dateTimePickerDateReturned.Value = dateTimePickerDateOut.Value.AddHours(1);
+
         }
 
         private void buttonMakeReservation_Click(object sender, EventArgs e)
@@ -125,5 +118,30 @@ namespace landrys_recon_vehicle_scheduler
             AboutBox1 aboutBox = new AboutBox1();
             aboutBox.ShowDialog();
         }
+
+        private void radioButtonTexas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonTexas.Checked) UpdateVehiclesList("T-");
+        }
+
+        private void radioButtonSulfur_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonSulfur.Checked) UpdateVehiclesList("S-");
+        }
+
+        private void UpdateVehiclesList(string startsWith)
+        {
+            // initialize vehicle list
+
+            vehicles.Clear();
+
+            addressLists = Globals.ThisAddIn.Application.Session.AddressLists;
+            globalAddressList = addressLists["Global Address List"];
+            foreach (Microsoft.Office.Interop.Outlook.AddressEntry addressEntry in globalAddressList.AddressEntries)
+                if (addressEntry.Name.StartsWith(startsWith))
+                    vehicles.Add(new Vehicle(addressEntry.Name));
+            listBoxControlVehicles.Refresh();
+        }
+
     }
 }

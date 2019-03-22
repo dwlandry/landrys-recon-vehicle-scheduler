@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A simple tool to help reserve a company vehicle.  Developed by David Landry.  For any technical issues contact at him dlandry@recon-group.com.  To uninstall, go to Add/Remove programs on your machine.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ReCon Management Services")]
-[assembly: AssemblyProduct("landrys-recon-vehicle-scheduler")]
+[assembly: AssemblyProduct("Landrys Recon Vehicle Scheduler")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

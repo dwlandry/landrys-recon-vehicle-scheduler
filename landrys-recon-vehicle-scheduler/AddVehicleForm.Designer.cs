@@ -35,12 +35,12 @@ namespace landrys_recon_vehicle_scheduler
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicleForm));
             this.listBoxControlVehicles = new DevExpress.XtraEditors.ListBoxControl();
             this.dateTimePickerDateOut = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerDateReturned = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxWhere = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@ namespace landrys_recon_vehicle_scheduler
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.radioButtonTexas = new System.Windows.Forms.RadioButton();
+            this.radioButtonSulfur = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -58,16 +60,16 @@ namespace landrys_recon_vehicle_scheduler
             // 
             // listBoxControlVehicles
             // 
-            this.listBoxControlVehicles.Location = new System.Drawing.Point(12, 59);
+            this.listBoxControlVehicles.Location = new System.Drawing.Point(12, 90);
             this.listBoxControlVehicles.Name = "listBoxControlVehicles";
-            this.listBoxControlVehicles.Size = new System.Drawing.Size(181, 193);
+            this.listBoxControlVehicles.Size = new System.Drawing.Size(181, 232);
             this.listBoxControlVehicles.TabIndex = 0;
             // 
             // dateTimePickerDateOut
             // 
             this.dateTimePickerDateOut.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.dateTimePickerDateOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDateOut.Location = new System.Drawing.Point(225, 59);
+            this.dateTimePickerDateOut.Location = new System.Drawing.Point(225, 90);
             this.dateTimePickerDateOut.Name = "dateTimePickerDateOut";
             this.dateTimePickerDateOut.Size = new System.Drawing.Size(164, 20);
             this.dateTimePickerDateOut.TabIndex = 1;
@@ -76,7 +78,7 @@ namespace landrys_recon_vehicle_scheduler
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 38);
+            this.label1.Location = new System.Drawing.Point(222, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 3;
@@ -86,7 +88,7 @@ namespace landrys_recon_vehicle_scheduler
             // 
             this.dateTimePickerDateReturned.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.dateTimePickerDateReturned.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDateReturned.Location = new System.Drawing.Point(225, 117);
+            this.dateTimePickerDateReturned.Location = new System.Drawing.Point(225, 148);
             this.dateTimePickerDateReturned.Name = "dateTimePickerDateReturned";
             this.dateTimePickerDateReturned.Size = new System.Drawing.Size(164, 20);
             this.dateTimePickerDateReturned.TabIndex = 3;
@@ -94,24 +96,15 @@ namespace landrys_recon_vehicle_scheduler
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 96);
+            this.label2.Location = new System.Drawing.Point(222, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Approx Time to be Returned";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Select Vehicle";
-            // 
             // textBoxWhere
             // 
-            this.textBoxWhere.Location = new System.Drawing.Point(225, 175);
+            this.textBoxWhere.Location = new System.Drawing.Point(225, 206);
             this.textBoxWhere.Name = "textBoxWhere";
             this.textBoxWhere.Size = new System.Drawing.Size(272, 20);
             this.textBoxWhere.TabIndex = 5;
@@ -119,7 +112,7 @@ namespace landrys_recon_vehicle_scheduler
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(222, 154);
+            this.label4.Location = new System.Drawing.Point(222, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 13);
             this.label4.TabIndex = 3;
@@ -128,7 +121,7 @@ namespace landrys_recon_vehicle_scheduler
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 211);
+            this.label5.Location = new System.Drawing.Point(222, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 3;
@@ -136,14 +129,14 @@ namespace landrys_recon_vehicle_scheduler
             // 
             // textBoxWho
             // 
-            this.textBoxWho.Location = new System.Drawing.Point(225, 232);
+            this.textBoxWho.Location = new System.Drawing.Point(225, 263);
             this.textBoxWho.Name = "textBoxWho";
             this.textBoxWho.Size = new System.Drawing.Size(272, 20);
             this.textBoxWho.TabIndex = 6;
             // 
             // buttonMakeReservation
             // 
-            this.buttonMakeReservation.Location = new System.Drawing.Point(225, 268);
+            this.buttonMakeReservation.Location = new System.Drawing.Point(225, 299);
             this.buttonMakeReservation.Name = "buttonMakeReservation";
             this.buttonMakeReservation.Size = new System.Drawing.Size(137, 23);
             this.buttonMakeReservation.TabIndex = 7;
@@ -154,7 +147,7 @@ namespace landrys_recon_vehicle_scheduler
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(422, 268);
+            this.buttonCancel.Location = new System.Drawing.Point(422, 299);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 8;
@@ -168,7 +161,7 @@ namespace landrys_recon_vehicle_scheduler
             this.labelScheduleConflict.BackColor = System.Drawing.Color.Red;
             this.labelScheduleConflict.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelScheduleConflict.ForeColor = System.Drawing.Color.White;
-            this.labelScheduleConflict.Location = new System.Drawing.Point(15, 307);
+            this.labelScheduleConflict.Location = new System.Drawing.Point(15, 338);
             this.labelScheduleConflict.Name = "labelScheduleConflict";
             this.labelScheduleConflict.Size = new System.Drawing.Size(441, 13);
             this.labelScheduleConflict.TabIndex = 10;
@@ -194,12 +187,39 @@ namespace landrys_recon_vehicle_scheduler
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // radioButtonTexas
+            // 
+            this.radioButtonTexas.AutoSize = true;
+            this.radioButtonTexas.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonTexas.Image")));
+            this.radioButtonTexas.Location = new System.Drawing.Point(12, 28);
+            this.radioButtonTexas.Name = "radioButtonTexas";
+            this.radioButtonTexas.Size = new System.Drawing.Size(74, 58);
+            this.radioButtonTexas.TabIndex = 12;
+            this.radioButtonTexas.TabStop = true;
+            this.radioButtonTexas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButtonTexas.UseVisualStyleBackColor = true;
+            this.radioButtonTexas.CheckedChanged += new System.EventHandler(this.radioButtonTexas_CheckedChanged);
+            // 
+            // radioButtonSulfur
+            // 
+            this.radioButtonSulfur.AutoSize = true;
+            this.radioButtonSulfur.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonSulfur.Image")));
+            this.radioButtonSulfur.Location = new System.Drawing.Point(119, 29);
+            this.radioButtonSulfur.Name = "radioButtonSulfur";
+            this.radioButtonSulfur.Size = new System.Drawing.Size(74, 51);
+            this.radioButtonSulfur.TabIndex = 12;
+            this.radioButtonSulfur.TabStop = true;
+            this.radioButtonSulfur.UseVisualStyleBackColor = true;
+            this.radioButtonSulfur.CheckedChanged += new System.EventHandler(this.radioButtonSulfur_CheckedChanged);
+            // 
             // AddVehicleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(509, 344);
+            this.ClientSize = new System.Drawing.Size(509, 363);
+            this.Controls.Add(this.radioButtonSulfur);
+            this.Controls.Add(this.radioButtonTexas);
             this.Controls.Add(this.labelScheduleConflict);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonMakeReservation);
@@ -208,7 +228,6 @@ namespace landrys_recon_vehicle_scheduler
             this.Controls.Add(this.textBoxWhere);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerDateReturned);
             this.Controls.Add(this.dateTimePickerDateOut);
@@ -239,7 +258,6 @@ namespace landrys_recon_vehicle_scheduler
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateReturned;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxWhere;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -249,5 +267,7 @@ namespace landrys_recon_vehicle_scheduler
         private System.Windows.Forms.Label labelScheduleConflict;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.RadioButton radioButtonTexas;
+        private System.Windows.Forms.RadioButton radioButtonSulfur;
     }
 }
