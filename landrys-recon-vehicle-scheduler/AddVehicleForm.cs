@@ -74,11 +74,10 @@ namespace landrys_recon_vehicle_scheduler
                 vehicleReservationMeeting.Duration = totalMinutes;
                 vehicleReservationMeeting.Subject = "Vehicle Checkout";
                 vehicleReservationMeeting.ReminderSet = false;
-                var vehicleName = ((Vehicle)listBoxControlVehicles.SelectedItem).Name;
-                Microsoft.Office.Interop.Outlook.Recipient recipient = vehicleReservationMeeting.Recipients.Add(vehicleName);
+                var vehicle = listBoxControlVehicles.SelectedValue.ToString();
+                Microsoft.Office.Interop.Outlook.Recipient recipient = vehicleReservationMeeting.Recipients.Add(vehicle);
                 recipient.Type = (int)Microsoft.Office.Interop.Outlook.OlMeetingRecipientType.olResource;
                 vehicleReservationMeeting.Recipients.ResolveAll();
-                vehicleReservationMeeting.Display(false);
                 vehicleReservationMeeting.Send();
                 Close();
             }
