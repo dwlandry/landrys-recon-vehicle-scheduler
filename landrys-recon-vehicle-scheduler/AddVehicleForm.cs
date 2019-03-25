@@ -143,5 +143,9 @@ namespace landrys_recon_vehicle_scheduler
             listBoxControlVehicles.Refresh();
         }
 
+        private void textBoxWhere_TextChanged(object sender, EventArgs e)
+        {
+            radioButtonSulfur.Image = textBoxWhere.Text.ToLower().Equals("god bless texas") ? Properties.Resources.Poop_Emoji : Properties.Resources.Louisiana;
+        }
     }
 }
