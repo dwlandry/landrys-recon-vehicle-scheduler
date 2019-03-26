@@ -38,6 +38,13 @@ namespace landrys_recon_vehicle_scheduler
             #region Validate Data
             // Validate Data
 
+            if (listBoxControlVehicles.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a vehicle.");
+                listBoxControlVehicles.Focus();
+                return;
+            }
+
             if (string.IsNullOrEmpty(textBoxWhere.Text))
             {
                 MessageBox.Show("'Where are you going?' cannot be empty.");
@@ -119,15 +126,9 @@ namespace landrys_recon_vehicle_scheduler
             aboutBox.ShowDialog();
         }
 
-        private void radioButtonTexas_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonTexas.Checked) UpdateVehiclesList("T-");
-        }
+        private void radioButtonTexas_CheckedChanged(object sender, EventArgs e) { if (radioButtonTexas.Checked) UpdateVehiclesList("T-"); }
 
-        private void radioButtonSulfur_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonSulfur.Checked) UpdateVehiclesList("S-");
-        }
+        private void radioButtonSulfur_CheckedChanged(object sender, EventArgs e) { if (radioButtonSulfur.Checked) UpdateVehiclesList("S-"); }
 
         private void UpdateVehiclesList(string startsWith)
         {
@@ -135,12 +136,21 @@ namespace landrys_recon_vehicle_scheduler
 
             vehicles.Clear();
 
-            addressLists = Globals.ThisAddIn.Application.Session.AddressLists;
-            globalAddressList = addressLists["Global Address List"];
-            foreach (Microsoft.Office.Interop.Outlook.AddressEntry addressEntry in globalAddressList.AddressEntries)
-                if (addressEntry.Name.StartsWith(startsWith))
-                    vehicles.Add(new Vehicle(addressEntry.Name));
-            listBoxControlVehicles.Refresh();
+            try
+            {
+                addressLists = Globals.ThisAddIn.Application.Session.AddressLists;
+                globalAddressList = addressLists["Global Address List"];
+                foreach (Microsoft.Office.Interop.Outlook.AddressEntry addressEntry in globalAddressList.AddressEntries)
+                    if (addressEntry.Name.StartsWith(startsWith))
+                        vehicles.Add(new Vehicle(addressEntry.Name));
+                listBoxControlVehicles.Refresh();
+            }
+            catch (Exception)
+            {
+                return;
+                //throw;
+            }
+            
         }
 
         private void textBoxWhere_TextChanged(object sender, EventArgs e)
