@@ -35,7 +35,6 @@ namespace landrys_recon_vehicle_scheduler
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicleForm));
             this.listBoxControlVehicles = new DevExpress.XtraEditors.ListBoxControl();
             this.dateTimePickerDateOut = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,14 +47,14 @@ namespace landrys_recon_vehicle_scheduler
             this.buttonMakeReservation = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelScheduleConflict = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.radioButtonTexas = new System.Windows.Forms.RadioButton();
             this.radioButtonSulfur = new System.Windows.Forms.RadioButton();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxControlVehicles
@@ -108,6 +107,7 @@ namespace landrys_recon_vehicle_scheduler
             this.textBoxWhere.Name = "textBoxWhere";
             this.textBoxWhere.Size = new System.Drawing.Size(272, 20);
             this.textBoxWhere.TabIndex = 5;
+            this.textBoxWhere.TextChanged += new System.EventHandler(this.textBoxWhere_TextChanged);
             // 
             // label4
             // 
@@ -190,7 +190,7 @@ namespace landrys_recon_vehicle_scheduler
             // radioButtonTexas
             // 
             this.radioButtonTexas.AutoSize = true;
-            this.radioButtonTexas.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonTexas.Image")));
+            this.radioButtonTexas.Image = global::landrys_recon_vehicle_scheduler.Properties.Resources.Texas;
             this.radioButtonTexas.Location = new System.Drawing.Point(12, 28);
             this.radioButtonTexas.Name = "radioButtonTexas";
             this.radioButtonTexas.Size = new System.Drawing.Size(74, 58);
@@ -203,7 +203,7 @@ namespace landrys_recon_vehicle_scheduler
             // radioButtonSulfur
             // 
             this.radioButtonSulfur.AutoSize = true;
-            this.radioButtonSulfur.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonSulfur.Image")));
+            this.radioButtonSulfur.Image = global::landrys_recon_vehicle_scheduler.Properties.Resources.Louisiana;
             this.radioButtonSulfur.Location = new System.Drawing.Point(119, 29);
             this.radioButtonSulfur.Name = "radioButtonSulfur";
             this.radioButtonSulfur.Size = new System.Drawing.Size(74, 51);
@@ -242,9 +242,9 @@ namespace landrys_recon_vehicle_scheduler
             this.Text = "Reserve Company Vehicle";
             this.Load += new System.EventHandler(this.AddVehicleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

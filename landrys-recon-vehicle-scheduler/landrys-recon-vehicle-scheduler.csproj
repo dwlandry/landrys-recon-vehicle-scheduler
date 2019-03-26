@@ -33,7 +33,7 @@
     <PublishUrl>\\reconservertx\tx users\dlandry\Public\_landrys-programs\landrys-recon-vehicle-scheduler\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.9</ApplicationVersion>
+    <ApplicationVersion>1.0.0.10</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -229,6 +229,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="landrys-recon-vehicle-scheduler_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -249,6 +250,15 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Poop Emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Texas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Louisiana.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
