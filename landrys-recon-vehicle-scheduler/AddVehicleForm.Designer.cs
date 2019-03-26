@@ -49,8 +49,8 @@ namespace landrys_recon_vehicle_scheduler
             this.labelScheduleConflict = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.radioButtonTexas = new System.Windows.Forms.RadioButton();
             this.radioButtonSulfur = new System.Windows.Forms.RadioButton();
+            this.radioButtonTexas = new System.Windows.Forms.RadioButton();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -187,19 +187,6 @@ namespace landrys_recon_vehicle_scheduler
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // radioButtonTexas
-            // 
-            this.radioButtonTexas.AutoSize = true;
-            this.radioButtonTexas.Image = global::landrys_recon_vehicle_scheduler.Properties.Resources.Texas;
-            this.radioButtonTexas.Location = new System.Drawing.Point(12, 28);
-            this.radioButtonTexas.Name = "radioButtonTexas";
-            this.radioButtonTexas.Size = new System.Drawing.Size(74, 58);
-            this.radioButtonTexas.TabIndex = 12;
-            this.radioButtonTexas.TabStop = true;
-            this.radioButtonTexas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButtonTexas.UseVisualStyleBackColor = true;
-            this.radioButtonTexas.CheckedChanged += new System.EventHandler(this.radioButtonTexas_CheckedChanged);
-            // 
             // radioButtonSulfur
             // 
             this.radioButtonSulfur.AutoSize = true;
@@ -208,9 +195,20 @@ namespace landrys_recon_vehicle_scheduler
             this.radioButtonSulfur.Name = "radioButtonSulfur";
             this.radioButtonSulfur.Size = new System.Drawing.Size(74, 51);
             this.radioButtonSulfur.TabIndex = 12;
-            this.radioButtonSulfur.TabStop = true;
             this.radioButtonSulfur.UseVisualStyleBackColor = true;
             this.radioButtonSulfur.CheckedChanged += new System.EventHandler(this.radioButtonSulfur_CheckedChanged);
+            // 
+            // radioButtonTexas
+            // 
+            this.radioButtonTexas.AutoSize = true;
+            this.radioButtonTexas.Image = global::landrys_recon_vehicle_scheduler.Properties.Resources.Texas;
+            this.radioButtonTexas.Location = new System.Drawing.Point(12, 28);
+            this.radioButtonTexas.Name = "radioButtonTexas";
+            this.radioButtonTexas.Size = new System.Drawing.Size(74, 58);
+            this.radioButtonTexas.TabIndex = 12;
+            this.radioButtonTexas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButtonTexas.UseVisualStyleBackColor = true;
+            this.radioButtonTexas.CheckedChanged += new System.EventHandler(this.radioButtonTexas_CheckedChanged);
             // 
             // AddVehicleForm
             // 

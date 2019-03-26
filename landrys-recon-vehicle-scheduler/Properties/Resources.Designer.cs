@@ -73,9 +73,9 @@ namespace landrys_recon_vehicle_scheduler.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Poop_Emoji {
+        internal static System.Drawing.Bitmap PoopEmoji {
             get {
-                object obj = ResourceManager.GetObject("Poop Emoji", resourceCulture);
+                object obj = ResourceManager.GetObject("PoopEmoji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
