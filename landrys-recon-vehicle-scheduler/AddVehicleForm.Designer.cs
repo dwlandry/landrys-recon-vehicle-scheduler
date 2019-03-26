@@ -35,7 +35,6 @@ namespace landrys_recon_vehicle_scheduler
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listBoxControlVehicles = new DevExpress.XtraEditors.ListBoxControl();
             this.dateTimePickerDateOut = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerDateReturned = new System.Windows.Forms.DateTimePicker();
@@ -52,17 +51,10 @@ namespace landrys_recon_vehicle_scheduler
             this.radioButtonSulfur = new System.Windows.Forms.RadioButton();
             this.radioButtonTexas = new System.Windows.Forms.RadioButton();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).BeginInit();
+            this.listBoxControlVehicles = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBoxControlVehicles
-            // 
-            this.listBoxControlVehicles.Location = new System.Drawing.Point(12, 90);
-            this.listBoxControlVehicles.Name = "listBoxControlVehicles";
-            this.listBoxControlVehicles.Size = new System.Drawing.Size(181, 232);
-            this.listBoxControlVehicles.TabIndex = 0;
             // 
             // dateTimePickerDateOut
             // 
@@ -210,12 +202,21 @@ namespace landrys_recon_vehicle_scheduler
             this.radioButtonTexas.UseVisualStyleBackColor = true;
             this.radioButtonTexas.CheckedChanged += new System.EventHandler(this.radioButtonTexas_CheckedChanged);
             // 
+            // listBoxControlVehicles
+            // 
+            this.listBoxControlVehicles.FormattingEnabled = true;
+            this.listBoxControlVehicles.Location = new System.Drawing.Point(18, 92);
+            this.listBoxControlVehicles.Name = "listBoxControlVehicles";
+            this.listBoxControlVehicles.Size = new System.Drawing.Size(198, 238);
+            this.listBoxControlVehicles.TabIndex = 13;
+            // 
             // AddVehicleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(509, 363);
+            this.Controls.Add(this.listBoxControlVehicles);
             this.Controls.Add(this.radioButtonSulfur);
             this.Controls.Add(this.radioButtonTexas);
             this.Controls.Add(this.labelScheduleConflict);
@@ -229,7 +230,6 @@ namespace landrys_recon_vehicle_scheduler
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerDateReturned);
             this.Controls.Add(this.dateTimePickerDateOut);
-            this.Controls.Add(this.listBoxControlVehicles);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
@@ -238,8 +238,6 @@ namespace landrys_recon_vehicle_scheduler
             this.Name = "AddVehicleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reserve Company Vehicle";
-            this.Load += new System.EventHandler(this.AddVehicleForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControlVehicles)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -249,8 +247,6 @@ namespace landrys_recon_vehicle_scheduler
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.ListBoxControl listBoxControlVehicles;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateOut;
         private System.Windows.Forms.Label label1;
@@ -267,5 +263,6 @@ namespace landrys_recon_vehicle_scheduler
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.RadioButton radioButtonTexas;
         private System.Windows.Forms.RadioButton radioButtonSulfur;
+        private System.Windows.Forms.ListBox listBoxControlVehicles;
     }
 }

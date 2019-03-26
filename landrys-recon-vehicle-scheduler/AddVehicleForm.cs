@@ -5,7 +5,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,7 +13,7 @@ namespace landrys_recon_vehicle_scheduler
 {
     public partial class AddVehicleForm : Form
     {
-        List<Vehicle> vehicles = new List<Vehicle>();
+        BindingList<Vehicle> vehicles = new BindingList<Vehicle>();
         Microsoft.Office.Interop.Outlook.AddressLists addressLists;
         Microsoft.Office.Interop.Outlook.AddressList globalAddressList;
 
@@ -25,7 +25,7 @@ namespace landrys_recon_vehicle_scheduler
             dateTimePickerDateReturned.ValueChanged += schedulingDataChanged;
 
             bindingSource1.DataSource = vehicles;
-            listBoxControlVehicles.DataSource = bindingSource1.DataSource;
+            listBoxControlVehicles.DataSource = vehicles; //bindingSource1.DataSource;
             listBoxControlVehicles.DisplayMember = "Name";
             listBoxControlVehicles.ValueMember = "Name";
 
@@ -114,12 +114,6 @@ namespace landrys_recon_vehicle_scheduler
 
         }
 
-        private void AddVehicleForm_Load(object sender, EventArgs e)
-        {
-            //AboutBox1 aboutBox = new AboutBox1();
-            //aboutBox.Show();
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox1 aboutBox = new AboutBox1();
@@ -147,10 +141,10 @@ namespace landrys_recon_vehicle_scheduler
             }
             catch (Exception)
             {
-                return;
                 //throw;
+                return;
             }
-            
+
         }
 
         private void textBoxWhere_TextChanged(object sender, EventArgs e)
@@ -158,79 +152,5 @@ namespace landrys_recon_vehicle_scheduler
             radioButtonSulfur.Image = textBoxWhere.Text.ToLower().Equals("sulphur") ? Properties.Resources.PoopEmoji : Properties.Resources.Louisiana;
         }
 
-        //private void toolStripMenuItemCheckForUpdate_Click(object sender, EventArgs e)
-        //{
-        //    InstallUpdateSyncWithInfo();
-        //}
-
-        //// 3-25-2019: DLandry: This solution is copied from here: https://docs.microsoft.com/en-us/visualstudio/deployment/how-to-check-for-application-updates-programmatically-using-the-clickonce-deployment-api?view=vs-2017
-        //private void InstallUpdateSyncWithInfo()
-        //{
-        //    UpdateCheckInfo info = null;
-
-        //    if (ApplicationDeployment.IsNetworkDeployed)
-        //    {
-        //        ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
-
-        //        try
-        //        {
-        //            info = ad.CheckForDetailedUpdate();
-
-        //        }
-        //        catch (DeploymentDownloadException dde)
-        //        {
-        //            MessageBox.Show("The new version of the application cannot be downloaded at this time. \n\nPlease check your network connection, or try again later. Error: " + dde.Message);
-        //            return;
-        //        }
-        //        catch (InvalidDeploymentException ide)
-        //        {
-        //            MessageBox.Show("Cannot check for a new version of the application. The ClickOnce deployment is corrupt. Please redeploy the application and try again. Error: " + ide.Message);
-        //            return;
-        //        }
-        //        catch (InvalidOperationException ioe)
-        //        {
-        //            MessageBox.Show("This application cannot be updated. It is likely not a ClickOnce application. Error: " + ioe.Message);
-        //            return;
-        //        }
-
-        //        if (info.UpdateAvailable)
-        //        {
-        //            Boolean doUpdate = true;
-
-        //            if (!info.IsUpdateRequired)
-        //            {
-        //                DialogResult dr = MessageBox.Show("An update is available. Would you like to update the application now?", "Update Available", MessageBoxButtons.OKCancel);
-        //                if (!(DialogResult.OK == dr))
-        //                {
-        //                    doUpdate = false;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                // Display a message that the app MUST reboot. Display the minimum required version.
-        //                MessageBox.Show("This application has detected a mandatory update from your current " +
-        //                    "version to version " + info.MinimumRequiredVersion.ToString() +
-        //                    ". The application will now install the update and restart.",
-        //                    "Update Available", MessageBoxButtons.OK,
-        //                    MessageBoxIcon.Information);
-        //            }
-
-        //            if (doUpdate)
-        //            {
-        //                try
-        //                {
-        //                    ad.Update();
-        //                    MessageBox.Show("The application has been upgraded, and will now restart.");
-        //                    Application.Restart();
-        //                }
-        //                catch (DeploymentDownloadException dde)
-        //                {
-        //                    MessageBox.Show("Cannot install the latest version of the application. \n\nPlease check your network connection, or try again later. Error: " + dde);
-        //                    return;
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
